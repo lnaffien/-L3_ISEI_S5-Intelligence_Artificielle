@@ -4,7 +4,7 @@ from random import random
 from data_extractor import DataExtractor
 
 data = DataExtractor()
-#print(data.get_line(line_number=0))
+print(data.get_line(line_number=1))
 
     # delta = 0
     # f = 0
