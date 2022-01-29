@@ -1,6 +1,7 @@
 from hashlib import new
 from random import random, randrange
 from data_extractor import DataExtractor
+from data_saved import DataSaved
 from perceptron import Perceptron
 
 data = DataExtractor()
@@ -11,6 +12,9 @@ for columnName in data.f_array[0]:
 
 perceptron = Perceptron(w)
 perceptron.exec_perceptron(data.get_line(4))
+
+result = DataSaved(data.get_line(1))
+result.write_line(data.get_line(1))
 
 # w = [w0, w1, w2, w3] # semaine, sexe, poids, bias
 
