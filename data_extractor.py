@@ -30,7 +30,6 @@ class DataExtractor:
                 (self.f_array[i])["Sexe"] = ord((self.f_array[i])["Sexe"])
             except Exception as e :
                 sys.exit("ERROR : DATA EXTRACTION : " + self.DATA_FILE_NAME + " line " + str(i) + " " + e)
-        print(self.f_array)
 
 
     def get_line(self, line_number):
