@@ -14,7 +14,7 @@ perceptron = Perceptron(w)
 perceptron.exec_perceptron(data.get_line(4))
 
 result = DataSaved(data.get_line(1))
-result.write_line(data.get_line(1))
+result.write_line(data.get_line(0))
 
 # w = [w0, w1, w2, w3] # semaine, sexe, poids, bias
 
