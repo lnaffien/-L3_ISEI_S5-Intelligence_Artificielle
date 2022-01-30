@@ -16,8 +16,8 @@ import sys
 from config import DATA_COLUMN_TO_FIND, DATA_FILE_NAME, DATA_COLUMNS_CHR_TYPE
 
 class DataExtractor:
-    f_array_input = []
-    f_array_output = []
+    f_array_input = []      # data inputs
+    f_array_output = []     # data expected outputs
 
     """ Initializes a new class instance.
         Read data from the data's file and store it into 2 lists, one with the inputs and the other with the outputs.
