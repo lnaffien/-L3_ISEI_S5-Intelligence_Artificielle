@@ -1,5 +1,5 @@
-from hashlib import new
-from random import random, randrange
+from random import randrange
+from config import DATA_COLUMN_TO_FIND
 from data_extractor import DataExtractor
 from data_saved import DataSaved
 from perceptron import Perceptron
@@ -7,14 +7,15 @@ from perceptron import Perceptron
 data = DataExtractor()
 w = []
 
-for columnName in data.f_array[0]:
-    w.append((randrange(0, 10)) / 10)
+# for columnName in data.f_array[0]:
+#     if(columnName != DATA_COLUMN_TO_FIND):
+#         w.append((randrange(0, 10)) / 10)
 
-perceptron = Perceptron(w)
-perceptron.exec_perceptron(data.get_line(4))
+# perceptron = Perceptron(w)
+# perceptron.exec_perceptron(data.get_input_line(0))
 
-result = DataSaved(data.get_line(1))
-result.write_line(data.get_line(0))
+# result = DataSaved(data.get_input_line(1))
+# result.write_line(data.get_input_line(0))
 
 # w = [w0, w1, w2, w3] # semaine, sexe, poids, bias
 

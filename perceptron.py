@@ -1,12 +1,10 @@
-from audioop import bias
 from random import randrange
 from math import exp
-
 from config import *
 
 class Perceptron:
     bias = randrange(-10, 10)
-    delta = randrange(-10, 10)
+    alpha = 0.1
     w = None            # liste des poids disponibles
     w_bias = randrange(-10, 10)
 
@@ -24,12 +22,14 @@ class Perceptron:
         else :
             print("ERROR : CONFIG : PERCEPTRON_ACTIVATION_FUNCTION isn't a valid function.")
 
-        if f != x :
-            y = 1
-        else :
-            print("f(x) = x, so a weight update isn't necessary.")
-
         print("f(" + str(x) + ") = " + str(f))
+
+        # if f != x :
+        #     y = 1
+        # else :
+        #     print("f(x) = x, so a weight update isn't necessary.")
+        self.__weight_update__(data, f)
+        
 
         
     def __x_calcul__(self, data = list):
@@ -44,10 +44,13 @@ class Perceptron:
     # def __f_calcul_hyperbolic_tangent__(self, x):
     #     return (exp(x) - exp(-x)) / (exp(x) + exp(-x))
 
-    # def __weight_update__(self, data = list, f):
-    #     self.w_bias = self.w_bias + self.delta * () * bias
-    #     for i in range(0, len(self.w)):
-    #         self.w[i] = self.w[i] + self.delta * ( - f) * 
+    def __weight_update__(self, data = list, f = float):
+        self.w_bias = self.w_bias + self.alpha * ( - f) * self.bias
+        print(self.w)
+        for i in range(0, len(self.w)):
+            print("w" + str(i) + " = " + str(self.w[i]) + " + " + str(self.alpha) + " * (" + str(f) + " - " + str(f) + ") * " + str(list(data.values())[i]) )
+            self.w[i] = self.w[i] + self.alpha * ( - f) * float(list(data.values())[i])
+        print(self.w)
         
 
 

@@ -7,3 +7,4 @@ DATA_FILE_NAME = "data_baby.csv"
 DATA_RESULT_FILE_NAME = "data_result.csv"
 
 DATA_COLUMNS_CHR_TYPE = ["Sexe"]
+DATA_COLUMN_TO_FIND = "PoidsBB"
