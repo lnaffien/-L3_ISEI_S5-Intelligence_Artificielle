@@ -20,16 +20,13 @@ class Perceptron:
         elif PERCEPTRON_ACTIVATION_FUNCTION == HYPERBOLIC_TANGENT :
             f = self.__f_calcul_hyperbolic_tangent__(x)
         else :
-            print("ERROR : CONFIG : PERCEPTRON_ACTIVATION_FUNCTION isn't a valid function.")
+            exit("ERROR : CONFIG : PERCEPTRON_ACTIVATION_FUNCTION isn't a valid function.")
 
         print("f(" + str(x) + ") = " + str(f))
 
-        # if f != x :
-        #     y = 1
-        # else :
         #     print("f(x) = x, so a weight update isn't necessary.")
-        self.__weight_update__(data, f)
-        
+
+        self.__weight_update__(data, f)        
 
         
     def __x_calcul__(self, data = list):
@@ -41,8 +38,8 @@ class Perceptron:
     def __f_calcul_sigmoid__(self, x):
         return (1 / (1 + exp(-x)))
     
-    # def __f_calcul_hyperbolic_tangent__(self, x):
-    #     return (exp(x) - exp(-x)) / (exp(x) + exp(-x))
+    def __f_calcul_hyperbolic_tangent__(self, x):
+        return (exp(x) - exp(-x)) / (exp(x) + exp(-x))
 
     def __weight_update__(self, data = list, f = float):
         self.w_bias = self.w_bias + self.alpha * ( - f) * self.bias

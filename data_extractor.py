@@ -20,8 +20,6 @@ class DataExtractor:
         self.__to_float__(self.f_array_input)
         self.__to_float__(self.f_array_output)
 
-        print(self.f_array_output)
-
 
     def __set_output_and_input__(self, array) :
         for line in range(0, len(array)) :

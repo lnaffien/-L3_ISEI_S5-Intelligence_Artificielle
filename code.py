@@ -7,12 +7,11 @@ from perceptron import Perceptron
 data = DataExtractor()
 w = []
 
-# for columnName in data.f_array[0]:
-#     if(columnName != DATA_COLUMN_TO_FIND):
-#         w.append((randrange(0, 10)) / 10)
+for columnName in data.f_array_input[0]:
+        w.append((randrange(0, 10)) / 10)
 
-# perceptron = Perceptron(w)
-# perceptron.exec_perceptron(data.get_input_line(0))
+perceptron = Perceptron(w)
+perceptron.exec_perceptron(data.get_input_line(0))
 
 # result = DataSaved(data.get_input_line(1))
 # result.write_line(data.get_input_line(0))
