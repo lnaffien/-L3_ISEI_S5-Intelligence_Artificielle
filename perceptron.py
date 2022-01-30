@@ -29,11 +29,10 @@ class Perceptron:
         self.__weight_update__(data_input, data_output, f)
 
     def predict(self, data_input = list):
-        o = 3
-
+        return self.__f_calcul_sigmoid__(self.__x_calcul__(data_input))
         
     def __x_calcul__(self, data = list):
-        x = self.bias * self.w_bias
+        x = self.w_bias # * self.bias
         for i in range(0, len(self.w)):
             x += self.w[i] * float(list(data.values())[i])
         return x
