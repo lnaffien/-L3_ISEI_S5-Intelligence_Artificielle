@@ -1,3 +1,16 @@
+#################################################################################################################
+#                                                                                                               #
+#                                               Perceptron                                                      #
+#                                                       by NAFFIEN Lucie (January 2022)                         #
+#                                                                                                               #
+# This module is a part of the project made for the "Artificial Intelligence" course, teached by M. DAACHI.     #
+# It is a part of the 3rd Bachelor's Computer Science specialised for Embedded and Interactive Systems year,    #
+# at University Paris 8.                                                                                        #
+#                                                                                                               #
+# GitHub link for the full project : https://github.com/lnaffien/L3_ISEI_S5-Intelligence_Artificielle           #
+#                                                                                                               #
+#################################################################################################################
+
 from random import randrange
 from math import exp
 from config import *
@@ -8,10 +21,21 @@ class Perceptron:
     w = None            # liste des poids disponibles
     w_bias = randrange(-10, 10)
 
-    def __init__(self, w = list):
+    def __init__(self, w):
+        """ Initializes a new class instance.
+
+        Args:
+            w (list): list of weights. Does not contain the bias' weight. Needs to have as much weight as the number of inputs.
+        """
         self.w = w
     
-    def learn(self, data_input = list, data_output = list):
+    def learn(self, data_input, data_output):
+        """AI is creating summary for learn
+
+        Args:
+            data_input ([type], optional): [description]. Defaults to list.
+            data_output ([type], optional): [description]. Defaults to list.
+        """
         x = self.__x_calcul__(data_input)
 
         f = 0
@@ -32,6 +56,14 @@ class Perceptron:
         return self.__f_calcul_sigmoid__(self.__x_calcul__(data_input))
         
     def __x_calcul__(self, data = list):
+        """Calculate x value.
+
+        Args:
+            data ([type], optional): [description]. Defaults to list.
+
+        Returns:
+            [type]: [description]
+        """
         x = self.w_bias # * self.bias
         for i in range(0, len(self.w)):
             x += self.w[i] * float(list(data.values())[i])
